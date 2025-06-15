@@ -16,7 +16,7 @@ To analyze Yelp review data by building a scalable and cloud-based pipeline that
 - **Amazon S3** – Cloud storage for raw and processed data  
 - **Snowflake** – Cloud data warehouse for data transformation and analysis using SQL  
 - **SQL** – Sentiment analysis logic, data querying, and aggregation  
-- **Power BI / Tableau** *(optional)* – Data visualization (mention only if used)
+- **Power BI / Tableau** – Data visualization (In progress) 
 
 ---
 
