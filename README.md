@@ -51,3 +51,13 @@ Yelp provides a massive volume of user-generated content. However, deriving acti
 5. **Insight Extraction**  
    - Identified common patterns in reviews by business category, date, and sentiment  
    - Highlighted key drivers of negative/positive feedback
+
+### 📬 Contact
+If you have any questions or suggestions, feel free to reach out:
+
+Name: Dhilip Kumar Thallem
+
+Email: [dhilipkumarthallem@gmail.com]
+
+LinkedIn: [https://www.linkedin.com/in/dhilip-kumar-thallem ]
+
