@@ -1,12 +1,12 @@
-# 📊 End-to-End Data Analytics and Sentiment Analysis on Yelp Reviews
+# 📊 AI-Powered Customer Experience Analysis Using Yelp Review Data
 
-This project demonstrates an end-to-end data pipeline and analytics workflow on Yelp reviews. Starting with a large raw JSON file (~5 GB), the data was cleaned and partitioned using Python, stored in AWS S3, and then processed using Snowflake for advanced SQL-based sentiment and data analysis.
+This project demonstrates an end-to-end data pipeline and analytics workflow on Yelp reviews. Starting with a large raw JSON file (~5 GB), the data was cleaned and partitioned using Python, stored in AWS S3, and processed in Snowflake. Leveraging AI techniques like natural language processing (NLP), sentiment analysis was performed on review texts to extract customer experience insights, enabling data-driven decisions based on real user feedback.
 
 ---
 
 ## 🎯 Project Objective
 
-To analyze Yelp review data by building a scalable and cloud-based pipeline that enables efficient sentiment classification and business insights using structured queries on Snowflake.
+To design and implement a scalable, cloud-based data pipeline for analyzing Yelp review data, leveraging natural language processing (NLP) for sentiment classification and Snowflake for structured query analysis, with the goal of extracting actionable business insights to enhance customer experience and brand perception.
 
 ---
 
@@ -16,7 +16,7 @@ To analyze Yelp review data by building a scalable and cloud-based pipeline that
 - **Amazon S3** – Cloud storage for raw and processed data  
 - **Snowflake** – Cloud data warehouse for data transformation and analysis using SQL  
 - **SQL** – Sentiment analysis logic, data querying, and aggregation  
-- **Power BI / Tableau** – Data visualization (In progress) 
+- **Tableau** – Data visualization (In progress) 
 
 ---
 
@@ -45,7 +45,7 @@ Yelp provides a massive volume of user-generated content. However, deriving acti
 
 4. **Data Transformation & Sentiment Analysis**  
    - Parsed JSON fields and flattened nested structures using SQL  
-   - Implemented sentiment analysis logic using keywords and text patterns in SQL  
+   - Integrated NLP techniques with SQL logic to perform sentiment analysis, leveraging keyword extraction, pattern matching, and AI-driven text classification models  
    - Performed aggregations and trend analysis
 
 5. **Insight Extraction**  
