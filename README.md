@@ -10,7 +10,7 @@ To design and implement a scalable, cloud-based data pipeline for analyzing Yelp
 
 ---
 
-## About Company
+## 🌎 About Company
 
 Yelp is a popular online platform that connects people with local businesses such as restaurants, shops, and services through user-generated reviews and ratings. Founded in 2004, Yelp provides a large dataset of customer feedback, making it a valuable resource for analyzing consumer sentiment, business performance, and market trends. Its publicly available data has been widely used in research and data analytics projects focused on natural language processing and sentiment analysis.
 
