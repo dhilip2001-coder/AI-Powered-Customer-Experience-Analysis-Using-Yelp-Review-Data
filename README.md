@@ -6,7 +6,7 @@ This project demonstrates an end-to-end data pipeline and analytics workflow on 
 
 ## 🎯 Project Objective
 
-To design and implement a scalable, cloud-based data pipeline for analyzing Yelp review data, leveraging natural language processing (NLP) for sentiment classification and Snowflake for structured query analysis, with the goal of extracting actionable business insights to enhance customer experience and brand perception.
+This project uses NLP, Large Language Models (LLMs), and data analytics to extract actionable insights from 500,000+ unstructured Yelp reviews. The goal was to help businesses identify recurring customer issues, improve service strategies, and optimize customer experience across different geographies.
 
 ---
 
@@ -20,41 +20,76 @@ Yelp is a popular online platform that connects people with local businesses suc
 - **Amazon S3** – Cloud storage for raw and processed data  
 - **Snowflake** – Cloud data warehouse for data transformation and analysis using SQL  
 - **SQL** – Sentiment analysis logic, data querying, and aggregation  
-- **Tableau** – Data visualization (In progress) 
+- **Tableau** – Data visualization (In progress)
+- **Libraries** - Pandas, NLTK, Snowflake Connector, OpenAI API (GPT-4) 
 
 ---
 
 ## 🧩 Problem Statement
 
-Yelp provides a massive volume of user-generated content. However, deriving actionable insights from such a large and unstructured dataset requires a robust processing pipeline. This project tackles the challenge by:
-- Breaking down a 5GB JSON dataset
-- Converting it into a structured tabular format
-- Performing sentiment analysis using SQL logic on Snowflake
-- Uncovering review trends and customer sentiments
+Yelp hosts millions of unstructured user reviews that hold valuable feedback on customer experience,but turning this raw text into actionable insights at scale is a challenge. This project addresses that by:
+- Ingesting and partitioning a 5GB JSON dataset of Yelp reviews
+- Converting unstructured data into a queryable tabular format using Snowflake
+- Applying NLP and LLMs to extract sentiment, themes, and emotional tone
+- Surfacing customer pain points and feedback trends across locations and categories
+- Enabling strategic decision-making through AI-enhanced dashboards in Tableau
 
 ---
 
+## 🚀 Features
+
+✅ Automated Pipeline: Extracts and loads raw Yelp reviews from Amazon S3 → transforms to Snowflake for scalable querying.
+✅ Sentiment Analysis: Uses NLTK’s VADER to analyze polarity and categorize reviews.
+✅ LLM-Based Insight Generation: GPT-4 is prompted to extract pain points, common service complaints, and emotional themes from user reviews.
+✅ Dashboards: Tableau visualizations displaying trends by city, service category, and sentiment rating.
+
+---
+
+## 🔐 API Keys & Configuration
+
+To use GPT-4 or Snowflake:
+  1. Create a .env file:
+     for example : OPENAI_API_KEY=your_key
+                   SNOWFLAKE_USER=your_user
+                   SNOWFLAKE_PASSWORD=your_password
+  2. Install dependencies:
+     for example : pip install -r requirements.txt
+
+...
+
 ## 🔄 Workflow Overview
 
-1. **Data Partitioning**  
-   - Loaded a large 5GB Yelp review JSON file using Python  
-   - Split the file into 10 smaller, manageable chunks
+1. **Data Ingestion & Partitioning**  
+   - Loaded a 5GB Yelp review JSON dataset using Python  
+   - Partitioned the raw data into 10 smaller files for easier handling and storage
 
-2. **Data Upload**  
-   - Uploaded the processed files into an **Amazon S3 Bucket**
+2. **Cloud Upload & Warehouse Integration**  
+   - Uploaded partitioned files to an Amazon S3 bucket
+   - Configured an external stage and file format in Snowflake to connect with S3
+   - Loaded and parsed JSON data into Snowflake tables using COPY INTO with semi-structured handling
 
-3. **Cloud Data Warehouse Setup**  
-   - Connected S3 bucket to **Snowflake** using external stage and file format  
-   - Loaded the JSON files into a **Snowflake table** using the COPY INTO command
+3. **Data Transformation & Preprocessing**  
+   - Flattened nested JSON structures using SQL and Python (Pandas)  
+   - Cleaned and normalized review data for downstream sentiment and language modeling
 
-4. **Data Transformation & Sentiment Analysis**  
-   - Parsed JSON fields and flattened nested structures using SQL  
-   - Integrated NLP techniques with SQL logic to perform sentiment analysis, leveraging keyword extraction, pattern matching, and AI-driven text classification models  
-   - Performed aggregations and trend analysis
+4. **Sentiment Analysis & LLM Insight Generation**  
+   - Performed rule-based sentiment scoring using NLP techniques (VADER, NLTK) 
+   - Integrated LLMs (GPT-4) via API to extract themes, emotions, and summarize customer pain points using prompt engineering  
+   - Applied AI-driven text classification to detect high-impact review segments
 
-5. **Insight Extraction**  
-   - Identified common patterns in reviews by business category, date, and sentiment  
-   - Highlighted key drivers of negative/positive feedback
+5. **Insight Extraction & Visualization**  
+   - Identified recurring feedback patterns by location, business category, and sentiment score 
+   - Visualized trends using Tableau dashboards to surface key satisfaction drivers and areas for service improvement
+
+---
+
+## 📊 Key Insights Discovered
+
+   - Frequent delays in service delivery were a major issue in metro cities.
+   - Customers value employee friendliness more than product variety.
+   - 1-star reviews frequently mention inconsistent pricing and long wait times.
+
+---
 
 ### 📬 Contact
 If you have any questions or suggestions, feel free to reach out:
